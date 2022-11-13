@@ -35,8 +35,15 @@ La columna "State" de la tabla "Regions" contiene los nombres de los estados de 
 ```
 STATE,COUNTRY: Regions[state]&", Australia"
 ```
+#### MEDIDA
+Creamos una nueva medida para calcular el porcentaje de utilidad
+```
+PORC_UTILIDAD = SUM(Sales[Gross Profit]) / SUM(Sales[Sales])
+```
+Esta medida se usará en el eje Y del gráfico de dispersión.
 
 #### REPORTE
 
 #### CONCLUSIONES
  Los estados que vendieron ready wear por encima del 70%
+El gráfico de dispersión muestra que mayor venta no significó mayor utilidad según categorias
