@@ -22,7 +22,7 @@ Desde Power Query verificamos que los tipos de datos sean los correctos para cad
 
 El data-set se encuentra limpio.
 
-Cerramos y Cargamos.
+Cerramos y cargamos.
 
 Desde la pestaña de Modelo vemos que las tablas no estan relacionadas correctamente, asi que eliminamos todas las relaciones.
 
@@ -30,5 +30,13 @@ La tabla Sales será de Dimension y las demás serán de Hecho.
 
 Establecemos las relaciones con direccionalidad de filtro cruzada en ambas direcciones.
 
+#### INCONVENIENTES
+La columna "State" de la tabla "Regions" contiene los nombres de los estados de manera abreviada, esto supone un error a la hora de utilizar un mapa coropléctico ya que Power BI no puede distinguir a que país nos referimos. Así que procedemos a crear una columna en la misma tabla en la cual concatenamos la abreviatura con la palabra Australia. En la barra de fórmulas ponemos:
+```
+STATE,COUNTRY: Regions[state]&", Australia"
+```
+
 #### REPORTE
 
+#### CONCLUSIONES
+ Los estados que vendieron ready wear por encima del 70%
