@@ -26,7 +26,7 @@ Cerramos y cargamos.
 
 Desde la pestaña de Modelo vemos que las tablas no estan relacionadas correctamente, asi que eliminamos todas las relaciones.
 
-La tabla Sales será de Dimension y las demás serán de Hecho.
+La tabla Sales será de Hecho y las demás serán de Dimensión.
 
 Establecemos las relaciones con direccionalidad de filtro cruzada en ambas direcciones.
 
@@ -45,5 +45,6 @@ Esta medida se usará en el eje Y del gráfico de dispersión.
 #### REPORTE
 
 #### CONCLUSIONES
- Los estados que vendieron ready wear por encima del 70%
+Los estados que vendieron ready wear por encima del 70%
+
 El gráfico de dispersión muestra que mayor venta no significó mayor utilidad según categorias
