@@ -8,7 +8,7 @@ Negocio de retail en Australia: Analizo las ventas y utilidades de la empresa du
 
 El informe tendrá una vista donde se mostrará:
 
-- Un slicer o segmentador de estados.
+- Un slicer o segmentador para los estados.
 - KPI para ventas.
 - Gráfico circular de ventas dividido por cadena.
 - Mapa de calor por ventas y estado.
@@ -18,6 +18,7 @@ El informe tendrá una vista donde se mostrará:
 - Gráfico de dispersión de ventas y porcentaje de ganancia, mostrado por cuatrimestre.
 
 #### TRANSFORMACIONES
+
 Desde Power Query verificamos que los tipos de datos sean los correctos para cada campo.
 
 El data-set se encuentra limpio.
@@ -26,16 +27,22 @@ Cerramos y cargamos.
 
 Desde la pestaña de Modelo vemos que las tablas no estan relacionadas correctamente, asi que eliminamos todas las relaciones.
 
+![This is an image](/AssetsRetailAustralia/Modelado1.png)
+
 La tabla Sales será de Hecho y las demás serán de Dimensión.
 
 Establecemos las relaciones con direccionalidad de filtro cruzada en ambas direcciones.
 
+![This is an image](/AssetsRetailAustralia/Modelado2.png)
+
 #### INCONVENIENTES
+
 La columna "State" de la tabla "Regions" contiene los nombres de los estados de manera abreviada, esto supone un error a la hora de utilizar un mapa coropléctico ya que Power BI no puede distinguir a que país nos referimos. Así que procedemos a crear una columna en la misma tabla en la cual concatenamos la abreviatura con la palabra Australia. En la barra de fórmulas ponemos:
 ```
 STATE,COUNTRY: Regions[state]&", Australia"
 ```
 #### MEDIDA
+
 Creamos una nueva medida para calcular el porcentaje de utilidad
 ```
 PORC_UTILIDAD = SUM(Sales[Gross Profit]) / SUM(Sales[Sales])
@@ -43,6 +50,8 @@ PORC_UTILIDAD = SUM(Sales[Gross Profit]) / SUM(Sales[Sales])
 Esta medida se usará en el eje Y del gráfico de dispersión.
 
 #### REPORTE
+
+![This is an image](/AssetsRetailAustralia/ReporteFinal.png)
 
 #### CONCLUSIONES
 Los estados que vendieron ready wear por encima del 70%
