@@ -52,8 +52,3 @@ Esta medida se usará en el eje Y del gráfico de dispersión.
 #### REPORTE
 
 ![This is an image](/AssetsRetailAustralia/ReporteFinal.png)
-
-#### CONCLUSIONES
-Los estados que vendieron ready wear por encima del 70%
-
-El gráfico de dispersión muestra que mayor venta no significó mayor utilidad según categorias
